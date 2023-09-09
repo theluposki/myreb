@@ -1,9 +1,144 @@
-*,*::before,*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400;1,900&family=Monoton&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --white: #fff;
+  --white: #fff;
+  --dark: #565564;
+  --dark2: #9190a0;
+
+  --roxo: hsl(270, 50%, 40%);
+
+  --current-primary: var(--roxo);
+  --default-color-font: var(--dark);
+
+  /* font-family: 'Fredericka the Great', cursive; */
+  font-family: "Merriweather", serif;
+  /* font-family: 'Monoton', cursive; */
+}
+
+html,
+body {
+  color: var(--default-color-font);
+  background-color: transparent;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header-m {
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--default-color-font);
+
+  width: 100%;
+  min-height: 100px;
+}
+
+.wrapper-header {
+  max-width: 1280px;
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--current-primary);
+  font-family: "Fredericka the Great", cursive;
+  font-size: 33px;
+}
+
+.hero,
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 500px;
+}
+
+.wrapper-hero,
+.wrapper-about {
+  background-color: #f1f1f1;
+
+  max-width: 1280px;
+  min-height: 500px;
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-about {
+  min-height: 700px;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f8f8f8;
+}
+
+.wrapper-about h2 {
+  font-size: 33px;
+}
+.wrapper-about h3 {
+  color: var(--dark2);
+  font-size: 18px;
+  font-weight: 400;
+}
+.wrapper-about p {
+  max-width: 800px;
+  text-align: justify;
+}
+
+.card-about {
+  margin: 20px 0 40px 0;
+  min-width: 800px;
+  max-width: 800px;
+    min-height: 260px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+
+  background-color: transparent;
+}
+.card-about-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-about-box > p {
+    font-size: 16px;
+}
+.card-about-box > img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
 }
