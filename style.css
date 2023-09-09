@@ -17,6 +17,7 @@
   --current-primary: var(--roxo);
   --default-color-font: var(--dark);
 
+  font-size: 62.5%;
   /* font-family: 'Fredericka the Great', cursive; */
   font-family: "Merriweather", serif;
   /* font-family: 'Monoton', cursive; */
@@ -29,6 +30,7 @@ body {
 
   width: 100%;
   min-height: 100vh;
+  font-size: 1.6rem;
 
   display: flex;
   flex-direction: column;
@@ -53,8 +55,9 @@ body {
   flex: 1;
   display: flex;
   align-items: center;
-
   justify-content: space-between;
+
+  padding: 0 20px;
 }
 
 .logo {
@@ -67,7 +70,7 @@ body {
   text-decoration: none;
   color: var(--current-primary);
   font-family: "Fredericka the Great", cursive;
-  font-size: 33px;
+  font-size: 3.3rem;
 }
 
 .hero,
@@ -84,6 +87,7 @@ body {
 .wrapper-about {
   background-color: #f1f1f1;
 
+  width: 100%;
   max-width: 1280px;
   min-height: 500px;
 
@@ -91,6 +95,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.wrapper-hero {
+  background-image: url("https://source.unsplash.com/random?a=10");
+  background-size: cover;
+  background-position: center;
+}
+
+.title-hero {
+  color: var(--white);
+  font-size: 4.4rem;
+  max-width: 80%;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 .wrapper-about {
@@ -101,30 +119,30 @@ body {
 }
 
 .wrapper-about h2 {
-  font-size: 33px;
+  margin-top: 20px;
+  font-size: 3.3rem;
 }
 .wrapper-about h3 {
   color: var(--dark2);
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 400;
 }
 .wrapper-about p {
   max-width: 800px;
   text-align: justify;
+  padding: 0 40px;
 }
 
 .card-about {
   margin: 20px 0 40px 0;
-  min-width: 800px;
-  max-width: 800px;
-    min-height: 260px;
+  min-width: 80%;
+  max-width: 80%;
+  min-height: 260px;
 
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   gap: 20px;
-
-  background-color: transparent;
 }
 .card-about-box {
   display: flex;
@@ -134,11 +152,52 @@ body {
 }
 
 .card-about-box > p {
-    font-size: 16px;
+  font-size: 1.6rem;
+  word-wrap: break-word;
+
+  margin: 10px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card-about-box > img {
   width: 150px;
   height: 150px;
   object-fit: cover;
   border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .title-hero {
+    color: var(--white);
+    font-size: 2.8rem;
+    max-width: 80%;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .card-about {
+    flex-direction: column;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 260px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
+  }
+
+  .card-about-box {
+    width: 100%;
+  }
+
+  .card-about-box > img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    min-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
 }
