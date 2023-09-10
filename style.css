@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -37,13 +38,12 @@ body {
 }
 
 .header-m {
-  background-color: transparent;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
   color: var(--default-color-font);
+  background-color: var(--white);
 
   width: 100%;
   min-height: 100px;
@@ -128,23 +128,42 @@ body {
   font-weight: 400;
 }
 .wrapper-about p {
-  max-width: 800px;
-  text-align: justify;
+  max-width: 80%;
+  text-align: center;
   padding: 0 40px;
+}
+
+.title-about {
+  max-width: 80%;
+  text-align: center;
+  margin: 80px 0 20px 0;
+  font-weight: 400;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-about {
   margin: 20px 0 40px 0;
   min-width: 80%;
-  max-width: 80%;
+  max-width: 100%;
+
   min-height: 260px;
+  max-height: 720px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
 
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 40px;
 }
 .card-about-box {
+  min-height: 220px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -152,9 +171,11 @@ body {
 }
 
 .card-about-box > p {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  text-align: center;
   word-wrap: break-word;
-
+  max-width: 150px;
+  flex: 1;
   margin: 10px 0;
 
   display: flex;
@@ -166,9 +187,21 @@ body {
   height: 150px;
   object-fit: cover;
   border-radius: 6px;
+
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 @media (max-width: 600px) {
+  .header-m {
+    width: 100%;
+    min-height: 60px;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
   .title-hero {
     color: var(--white);
     font-size: 2.8rem;
@@ -178,19 +211,23 @@ body {
   }
 
   .card-about {
-    flex-direction: column;
-    min-width: 100%;
-    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
     min-height: 260px;
+    max-height: 420px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 40px;
   }
 
   .card-about-box {
-    width: 100%;
+    min-width: 100%;
   }
 
   .card-about-box > img {
@@ -198,6 +235,6 @@ body {
     aspect-ratio: 16/9;
     min-height: 300px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 0px;
   }
 }
